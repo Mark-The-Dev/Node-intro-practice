@@ -1,10 +1,12 @@
 'use strict';
 
 const fs = require("fs");
-const path = require("path");
+const path = require('path');
 
 const source = process.argv[2];
 const target = process.argv[3];
+
+
 
 // read contents of source
 const contentsOfSource = fs.readFileSync(source, "utf-8");
@@ -25,7 +27,7 @@ linesInSource.forEach((line) => {
   const newFilePath = path.join(__dirname, target, filename);
 
   // write the file and it's contents
-  fs.writeFileSync(newFilePath, contentArr.join(), {
+  fs.writeFileSync(newFilePath, contentArr.join(" "), {
     flag: "w+",
     encoding: "utf-8",
   });
